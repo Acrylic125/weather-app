@@ -1,3 +1,5 @@
+import moment from "moment";
+
 /**
  *
  * @param {Date} day
@@ -11,5 +13,5 @@ export function getWeekDaysOf(day) {
  * @param {Date} date
  */
 export function formatAsShortDate(date) {
-  return "";
+  return moment(date, "YYY-MM-DD").format("D MMM");
 }
