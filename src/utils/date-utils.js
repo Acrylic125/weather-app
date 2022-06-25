@@ -22,5 +22,8 @@ export function getWeekDatesOf(day) {
  * @param {Date} date
  */
 export function formatAsShortDate(date) {
-  return moment(date, "YYY-MM-DD").format("D MMM");
+  return "3 Mar";
 }
+// export function formatAsShortDate(date) {
+//   return moment(date, "YYY-MM-DD").format("D MMM");
+// }

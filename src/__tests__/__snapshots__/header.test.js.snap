@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Given the MainHeader component should render correctly 1`] = `
+<h1
+  style={
+    Object {
+      "color": "#ffffff",
+      "fontWeight": "bold",
+    }
+  }
+/>
+`;
