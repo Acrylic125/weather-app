@@ -30,18 +30,20 @@ describe("Given that I want to send over a request", () => {
       //   .mockReturnValue({
       //     data: "Subsequent Return Value (After Second)",
       //   });
-      mockFunction
-        .mockResolvedValueOnce({
-          data: "First Return Value resolved in a Promise object",
-        })
-        .mockResolvedValueOnce({
-          data: "Second Return Value resolved in a Promise object",
-        })
-        .mockResolvedValue({
-          data: "Subsequent Return Value (After Second) resolved in a Promise object",
-        });
+      // mockFunction
+      //   .mockResolvedValueOnce({
+      //     data: "First Return Value resolved in a Promise object",
+      //   })
+      //   .mockResolvedValueOnce({
+      //     data: "Second Return Value resolved in a Promise object",
+      //   })
+      //   .mockResolvedValue({
+      //     data: "Subsequent Return Value (After Second) resolved in a Promise object",
+      //   });
       executeBatch();
     });
+
+    // it("");
 
     // it("e", () => {
     //   // Tests if the mock function was called at least once.
@@ -57,28 +59,31 @@ describe("Given that I want to send over a request", () => {
     //   // Tests if the Nth call to the mock function returned the returnValue. n starts from 1.
     //   expect(mockFunction).toHaveNthReturnedWith(n, returnValue);
     // });
-    it("should have called my function", () => {
-      // expect(mockFunction).toReturnWith({
-      //   data: "Hello",
-      // });
-      // expect(mockFunction).toBeCalledWith("Hello", "World", 6, {
-      //   hello: "world",
-      // });
-    });
+    // it("should have called my function", () => {
+    // expect(mockFunction).toReturnWith({
+    //   data: "Hello",
+    // });
+    // expect(mockFunction).toBeCalledWith("Hello", "World", 6, {
+    //   hello: "world",
+    // });
+    // });
     // it("should have called my function", () => {
     //   expect(mockFunction).toHaveReturnedWith();
     // });
 
-    // it("should have called my function only once", () => {
-    //   expect(mockFunction.mock.calls.length).toBe(1);
-    // });
+    it("should have called my function only once", () => {
+      // expect(mockFunction.mock.calls.length).toBe(1);
+      expect(mockFunction).toHaveBeenCalledTimes(1);
+    });
 
-    // it("should have called my function without any arguments", () => {
-    //   expect(mockFunction.mock.calls[0].length).toBe(0);
-    // });
+    it("should have called my function without any arguments", () => {
+      // expect(mockFunction.mock.calls[0].length).toBe(0);
+      expect(mockFunction).toHaveBeenNthCalledWith(1, ...[]);
+    });
 
-    // it("should have called my function and not returning anything (undefned)", () => {
-    //   expect(mockFunction.mock.results[0].value).toBeUndefined();
-    // });
+    it("should have called my function and not returning anything (undefned)", () => {
+      // expect(mockFunction.mock.results[0].value).toBeUndefined();
+      expect(mockFunction).toHaveNthReturnedWith(1, undefined);
+    });
   });
 });

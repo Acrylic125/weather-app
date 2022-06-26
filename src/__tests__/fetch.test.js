@@ -4,13 +4,6 @@ import { fetchWeatherReportForDay } from "../api/weather-data";
 // Transforms all the functions in axios to Mock Functions.
 jest.mock("axios");
 
-// const object = {
-//   method() {
-//     console.log("HELLO WORLD!");
-//     return "Hello";
-//   },
-// };
-
 describe("Given the date object, 3/3/2022 at 12:00", () => {
   describe("When fetchWeatherReportForDay is called", () => {
     it("should return the weather report for the day", async () => {
@@ -30,10 +23,5 @@ describe("Given the date object, 3/3/2022 at 12:00", () => {
       );
       expect(weatherReport).toEqual(dummyWeatherData);
     });
-    // it("test", () => {
-    //   const spy = jest.spyOn(object, "function name");
-    //   object.method();
-    //   expect(spy).toHaveBeenCalled();
-    // });
   });
 });
